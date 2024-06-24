@@ -40,7 +40,17 @@ final class Kata4
 	 */
 	public static function bubbleSort(array $array): array
 	{
-		// TODO: Complete this function!
+		$length = count($array) - 1;
+		while ($length > 0) {
+			for ($i = 0; $i < $length; $i++) {
+				if ($array[$i] > $array[$i + 1]) {
+					$value = $array[$i + 1];
+					$array[$i + 1] = $array[$i];
+					$array[$i] = $value;
+				}
+			}
+			$length -= 1;
+		}
 		return $array;
 	}
 }
